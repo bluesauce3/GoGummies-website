@@ -12,12 +12,16 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 8vmin;
+}
+
 h3 {
-  font-size: 4vh;
+  font-size: 6vmin;
 }
 
 p {
-  font-size: 2vh;
+  font-size: 2vmin;
 }
 
 .container {
@@ -59,39 +63,41 @@ p {
 }
 
 .main-title div {
-	display: flex;
-    align-items: center;
-    justify-content: center;
-	
-	width: 80%;
-	height: 100%;
-	margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80%;
+  height: 100%;
+  margin: auto;
 }
 
-.main-title div h1 {
+.main-title h1 {
   text-align: center;
   margin: 0;
   padding: 10px;
-  font-size: 10vh;
+}
+.main-title p {
+  text-align: left;
+  margin: 0;
+  padding: 10px;
 }
 
 
 
-.main-title div div{
-	width: 35%;
-    align-items: center;
-    justify-content: center;
-	flex-direction: column;
+.main-title div div {
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.main-title div div *{
-}
-
 
 .main-title div img {
-	width: 60%;
+  width: 60%;
 }
 
 .info-blocks {
+  --block-size: 60vh;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -108,13 +114,15 @@ p {
   overflow: hidden;
 }
 
-.info-blocks div img {
+.info-blocks>div>img {
+  position: absolute;
+  object-fit: cover;
   width: 100vw;
-  height: auto;
+  height: var(--block-size);
   z-index: -1;
 }
 
-.info-blocks div div{
+.info-blocks div div {
   position: relative;
   height: 100%;
   padding: 0;
@@ -123,25 +131,29 @@ p {
   display: flex;
 
 }
-.info-blocks div div *{
+
+.info-blocks div div * {
   padding: 0;
   margin: 10px;
+  outline: solid 3px limegreen;
 }
-.info-blocks div div img{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  object-fit: cover;
-  width: 100%;
-  
+
+.info-blocks>div>div>img {
+  --upper-margin: 50px;
   padding: 0;
-  margin: 0;
-  outline: solid 1px blue;
+  margin: var(--upper-margin) 10px;
+  object-fit: cover;
+  flex: 0 0 calc(--block-size - calc(var(--upper-margin)));
+  max-width: 50vw;
+  outline: solid 2px yellow;
 }
 
+.info-blocks div div div {
+  outline: solid 2px salmon;
+  display: block;
+}
 
-
-.info-blocks div:nth-child(odd) div div:has(img){
+.info-blocks div:nth-child(odd) div img {
   order: 1;
 }
 
@@ -151,4 +163,3 @@ footer {
   text-align: center;
   padding: 10px;
 }
-
