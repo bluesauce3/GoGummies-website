@@ -36,7 +36,7 @@ p {
   height: var(--size);
   width: calc(100% - calc(2 * 20px));
   position: fixed;
-  font-size: calc(var(--size)/3);
+  font-size: 2.8vw;
   background-image: linear-gradient(var(--accent-colour) 0%, rgba(0, 0, 0, 0) 100%);
   color: var(--light-colour);
   display: flex;
@@ -81,6 +81,7 @@ p {
   text-align: left;
   margin: 0;
   padding: 10px;
+  font-size: 1.3vmax;
 }
 
 
@@ -93,7 +94,7 @@ p {
 }
 
 .main-title div img {
-  width: 60%;
+  width: 55%;
 }
 
 .info-blocks {
@@ -113,7 +114,7 @@ p {
   display: flex;
   overflow: hidden;
 }
-
+/*background image*/
 .info-blocks>div>img {
   position: absolute;
   object-fit: cover;
@@ -135,21 +136,18 @@ p {
 .info-blocks div div * {
   padding: 0;
   margin: 10px;
-  outline: solid 3px limegreen;
 }
-
+/*display image*/
 .info-blocks>div>div>img {
-  --upper-margin: 50px;
+  --upper-margin: 30px;
   padding: 0;
-  margin: var(--upper-margin) 10px;
+  margin: var(--upper-margin);
   object-fit: cover;
   flex: 0 0 calc(--block-size - calc(var(--upper-margin)));
   max-width: 50vw;
-  outline: solid 2px yellow;
 }
 
 .info-blocks div div div {
-  outline: solid 2px salmon;
   display: block;
 }
 
