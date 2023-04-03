@@ -1,15 +1,18 @@
 * {
   --image-height: 300px;
-  --accent-colour: #f359d6;
-  --dark-accent-colour: #8f0a77;
+  --accent-colour: #1dd4d3;
+  --dark-accent-colour: #128787;
   --dark-colour: #16171a;
   --light-colour: #f0effa;
 }
+
+/*#f359d6*/
 
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--accent-colour);
 }
 
 h1 {
@@ -35,9 +38,10 @@ p {
   --size: 10vh;
   height: var(--size);
   width: calc(100% - calc(2 * 20px));
-  position: fixed;
-  font-size: 2.8vw;
-  background-image: linear-gradient(var(--accent-colour) 0%, rgba(0, 0, 0, 0) 100%);
+  position: sticky;
+  top: 0;
+  font-size: 2.8vmax;
+  background-image: linear-gradient(var(--dark-accent-colour) 0%, rgba(0, 0, 0, 0) 100%);
   color: var(--light-colour);
   display: flex;
   justify-content: space-between;
@@ -47,6 +51,10 @@ p {
   z-index: 1;
 }
 
+.navbar nav {
+  text-align: center;
+}
+
 .navbar a {
   padding: 0;
   margin: 0;
@@ -54,58 +62,81 @@ p {
   text-decoration: none;
 }
 
-.main-title {
+.title {
   background-color: var(--accent-colour);
   color: var(--light-colour);
-  height: 80vh;
   padding: 20px;
   margin: 0;
 }
 
-.main-title div {
+.main.title {
+  height: 80vh;
+}
+
+.about.title {
+  height: 30vh;
+}
+
+
+
+.title div {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: auto;
 }
 
-.main-title h1 {
-  text-align: center;
-  margin: 0;
-  padding: 10px;
-}
-.main-title p {
+.title h1 {
   text-align: left;
   margin: 0;
   padding: 10px;
-  font-size: 1.3vmax;
+  font-size: 6vw;
 }
 
+.about.title h1 {
+  white-space: nowrap;
+}
 
+.title p {
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.3vw;
+}
 
-.main-title div div {
-  width: 35%;
+.title img {
+  width: 100%;
+  object-fit: fill;
+}
+
+.title div div {
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
+}
+
+.about.title div div {
+  flex-direction: row;
+}
+
+.main.title div div {
   flex-direction: column;
 }
 
-.main-title div img {
-  width: 55%;
-}
 
-.info-blocks {
+.blocks {
   --block-size: 60vh;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
-.info-blocks div {
+.blocks div {
   padding: 0;
   margin: 0;
   height: 60vh;
@@ -114,8 +145,9 @@ p {
   display: flex;
   overflow: hidden;
 }
+
 /*background image*/
-.info-blocks>div>img {
+.blocks>div>img {
   position: absolute;
   object-fit: cover;
   width: 100vw;
@@ -123,7 +155,7 @@ p {
   z-index: -1;
 }
 
-.info-blocks div div {
+.blocks div div {
   position: relative;
   height: 100%;
   padding: 0;
@@ -133,12 +165,13 @@ p {
 
 }
 
-.info-blocks div div * {
+.blocks div div * {
   padding: 0;
   margin: 10px;
 }
+
 /*display image*/
-.info-blocks>div>div>img {
+.blocks>div>div>img {
   --upper-margin: 30px;
   padding: 0;
   margin: var(--upper-margin);
@@ -147,12 +180,16 @@ p {
   max-width: 50vw;
 }
 
-.info-blocks div div div {
+.blocks div div div {
   display: block;
 }
 
-.info-blocks div:nth-child(odd) div img {
+.blocks div:nth-child(odd) div img {
   order: 1;
+}
+
+.blocks>div:nth-child(even)>img {
+  filter: brightness(80%);
 }
 
 footer {
